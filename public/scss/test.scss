@@ -1,0 +1,23 @@
+@import "vars";
+@import "mixin";
+
+#header {
+  color: $font-color;
+  background-color: $gray-color;
+}
+
+#mainVisual {
+  .slogan {
+    @include absCenter(false, true);
+    @include longShadow;
+  }
+}
+
+#news ul li {
+  h3 {
+    @include ellipsis;
+  }
+  .desc {
+    @include multiEllipsis(2, 1.2);
+  }
+}

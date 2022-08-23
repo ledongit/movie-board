@@ -1,0 +1,415 @@
+html {
+  font-size: 16px;
+}
+
+/* common */
+.section {
+  padding: 100px 0;
+}
+.section .titleBox {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.section .titleBox h2 {
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+.section .container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+.btns .btn {
+  display: flex;
+  height: 60px;
+  overflow: hidden;
+  padding: 0 40px;
+  border-radius: 100px;
+  align-items: center;
+  background-color: #bf0c14;
+  text-shadow: 1px 1px 0px #8f090f,2px 2px 0px #8f090f,3px 3px 0px #8f090f,4px 4px 0px #8f090f,5px 5px 0px #8f090f,6px 6px 0px #8f090f,7px 7px 0px #8f090f,8px 8px 0px #8f090f,9px 9px 0px #8f090f,10px 10px 0px #8f090f,11px 11px 0px #8f090f,12px 12px 0px #8f090f,13px 13px 0px #8f090f,14px 14px 0px #8f090f,15px 15px 0px #8f090f,16px 16px 0px #8f090f,17px 17px 0px #8f090f,18px 18px 0px #8f090f,19px 19px 0px #8f090f,20px 20px 0px #8f090f,21px 21px 0px #8f090f,22px 22px 0px #8f090f,23px 23px 0px #8f090f,24px 24px 0px #8f090f,25px 25px 0px #8f090f,26px 26px 0px #8f090f,27px 27px 0px #8f090f,28px 28px 0px #8f090f,29px 29px 0px #8f090f,30px 30px 0px #8f090f,31px 31px 0px #8f090f,32px 32px 0px #8f090f,33px 33px 0px #8f090f,34px 34px 0px #8f090f,35px 35px 0px #8f090f,36px 36px 0px #8f090f,37px 37px 0px #8f090f,38px 38px 0px #8f090f,40px 40px 0px #8f090f;
+}
+
+#mainVisual {
+  overflow: hidden;
+}
+#mainVisual ul li {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+}
+#mainVisual ul li.swiper-slide-active .aniMask {
+  width: 100%;
+  transition: all 1s ease;
+}
+#mainVisual ul li.swiper-slide-prev .aniMask {
+  width: 100%;
+}
+#mainVisual ul li .aniMask {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+#mainVisual ul li .img {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#mainVisual ul li.visual01 .img {
+  background-image: url(../images/main/mainVisual01.jpg);
+}
+#mainVisual ul li.visual02 .img {
+  background-image: url(../images/main/mainVisual02.jpg);
+}
+#mainVisual ul li.visual03 .img {
+  background-image: url(../images/main/mainVisual03.jpg);
+}
+#mainVisual .slogan {
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#mainVisual .slogan h2 {
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+  overflow: hidden;
+  line-height: 1.5;
+}
+#mainVisual .slogan p {
+  font-size: 20px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+#mainVisual .btn {
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  border: 1px solid #fff;
+  background: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#mainVisual .btn .material-icons {
+  font-size: 48px;
+  color: #fff;
+  vertical-align: top;
+}
+#mainVisual .btn.prev {
+  left: 50px;
+}
+#mainVisual .btn.next {
+  right: 50px;
+}
+#mainVisual .pagination {
+  position: absolute;
+  width: 100%;
+  bottom: 150px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mainVisual .pagination .swiper-pagination-bullets {
+  width: auto;
+}
+#mainVisual .pagination .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  background: none;
+  transition: all 0.25s ease;
+}
+#mainVisual .pagination .swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background-color: #fff;
+  width: 100px;
+}
+#mainVisual .pagination .autoBtns button {
+  background: none;
+  border: none;
+  outline: none;
+}
+#mainVisual .pagination .autoBtns button.play {
+  display: none;
+}
+#mainVisual .pagination .autoBtns button .material-icons {
+  font-size: 30px;
+  color: #fff;
+}
+#mainVisual .iconScroll {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+#mainVisual .iconScroll .icon {
+  display: block;
+  width: 24px;
+  height: 50px;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  border-radius: 100px;
+}
+#mainVisual .iconScroll .icon:before {
+  width: 2px;
+  height: 10px;
+  margin: 10px auto 0;
+  background-color: #fff;
+  animation: mouseAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation: mouseAnimation 1s ease-in-out 0s infinite alternate;
+  content: "";
+  display: block;
+  position: relative;
+}
+
+#quickMenu .list {
+  display: flex;
+}
+#quickMenu .list li {
+  position: relative;
+  overflow: hidden;
+}
+#quickMenu .list li:before {
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: opacity 0.25 ease;
+  pointer-events: none;
+  opacity: 0;
+  content: "";
+  display: block;
+  position: absolute;
+}
+#quickMenu .list li:hover:before {
+  opacity: 1;
+}
+#quickMenu .list li:hover img {
+  transform: scale(1.2);
+}
+#quickMenu .list li img {
+  transition: transform 0.25s ease-in-out;
+  vertical-align: top;
+}
+#quickMenu .list li .txtBox {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fff;
+}
+#quickMenu .list li h3 {
+  margin-top: 20px;
+  font-size: 38px;
+  font-weight: 700;
+}
+#quickMenu .list li p {
+  font-size: 21px;
+}
+
+#business {
+  background-image: url("../images/main/bgBusiness.jpg");
+  background-size: cover;
+}
+#business .container {
+  border: 1px solid #f00;
+}
+#business .list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  outline: 1px solid #00f;
+}
+#business .list li {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+#business .list li:hover img {
+  transform: scale(1.2);
+}
+#business .list li:hover .border span:nth-child(1) {
+  transform: scaleX(1);
+}
+#business .list li:hover .border span:nth-child(2) {
+  transform: scaleY(1);
+}
+#business .list li:hover .border span:nth-child(3) {
+  transform: scaleX(1);
+}
+#business .list li:hover .border span:nth-child(4) {
+  transform: scaleY(1);
+}
+#business .list li .txtBox {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fff;
+}
+#business .list li .txtBox h3 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+#business .list li img {
+  transition: all 0.25s ease-in-out;
+  vertical-align: top;
+}
+#business .list li .border {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+}
+#business .list li .border span {
+  position: absolute;
+  transition: transform 0.25s ease;
+  background-color: #fff;
+}
+#business .list li .border span:nth-child(1) {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+#business .list li .border span:nth-child(2) {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition-delay: 0.25s;
+}
+#business .list li .border span:nth-child(3) {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition-delay: 0.5s;
+}
+#business .list li .border span:nth-child(4) {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition-delay: 0.75s;
+}
+
+#news .list {
+  display: flex;
+  margin: -10px;
+}
+#news .list li {
+  width: calc(33.33% - 10px);
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+#news .list li img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+#news .list li .desc {
+  padding: 20px;
+}
+#news .list li .desc h3 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#news .list li .desc .txt {
+  margin-bottom: 30px;
+  line-height: 1.5;
+  height: 4.5em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+#news .list li .desc .date {
+  color: #999;
+}
+
+#customer {
+  color: #fff;
+  background-position: 50% 50%;
+  background-image: url("../images/main/bgCustomer.jpg");
+  background-size: cover;
+}
+#customer .titleBox h2:after {
+  width: 30px;
+  height: 2px;
+  margin: 30px auto;
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: relative;
+}
+
+.subVisual {
+  height: 400px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subVisual .subTitle {
+  font-size: 48px;
+}
+
+.subContents {
+  min-height: 800px;
+  padding: 100px 0;
+}
+.subContents .contentsTitle {
+  text-align: center;
+  font-size: 32px;
+}
+
+@keyframes mouseAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
