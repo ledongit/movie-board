@@ -1,4 +1,5 @@
 <%- include("include/header"); %>
+<div class="bgdark"></div>
 
 <main id="main">
   <div id="contents">
@@ -12,11 +13,24 @@
     >
       <div class="inputBox">
         <label>
+          <span class="label">글 제목</span>
+          <input
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            class="input"
+            placeholder="글 제목을 입력하세요 (6자 이상)"
+          />
+        </label>
+      </div>
+      <div class="inputBox">
+        <label>
           <span class="label">영화제목</span>
           <input
             type="text"
             id="movieTitle"
             name="movieTitle"
+            class="input"
             placeholder="영화 제목을 입력하세요"
           />
         </label>
@@ -28,6 +42,7 @@
             type="text"
             id="date"
             name="date"
+            class="input"
             placeholder="관람일을 입력하세요"
           />
         </label>
@@ -35,7 +50,14 @@
       <div class="inputBox">
         <label>
           <span class="label">후기 작성</span>
-          <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+          <textarea
+            name="desc"
+            class="input"
+            id="desc"
+            cols="30"
+            rows="10"
+            placeholder="10자 이상 입력하세요."
+          ></textarea>
         </label>
       </div>
       <div class="inputBox">
@@ -48,13 +70,15 @@
             step="0.1"
             id="point"
             name="point"
+            class="input"
+            placeholder="0.0~5.0"
           />
         </label>
       </div>
       <div class="inputBox">
         <label>
           <span class="label">이미지 첨부</span>
-          <input type="file" name="image" id="image" />
+          <input type="file" name="image" id="image" class="input" />
         </label>
       </div>
       <div class="btns">
@@ -64,5 +88,46 @@
     </form>
   </div>
 </main>
+
+<script>
+  $("#btnConfirm").on("click", () => {
+    if ($("#postTitle").val().trim().length <= 5) {
+      $("#postTitle").addClass("error");
+      $("#postTitle").focus();
+      return false;
+    } else if ($("#movieTitle").val().trim().length <= 0) {
+      $("#movieTitle").addClass("error");
+      $("#movieTitle").focus();
+      return false;
+    } else if ($("#date").val().trim().length <= 0) {
+      $("#date").addClass("error");
+      $("#date").focus();
+      return false;
+    } else if ($("#desc").val().trim().length <= 10) {
+      $("#desc").addClass("error");
+      $("#desc").focus();
+      return false;
+    } else if ($("#point").val().trim().length <= 0) {
+      $("#point").addClass("error");
+      $("#point").focus();
+      return false;
+    }
+  });
+
+  ratings = { RatingScore: 4.5 };
+  totalRating = 5;
+  table = document.querySelector(".RatingStar");
+  function rateIt() {
+    for (rating in ratings) {
+      ratingPercentage = (ratings[rating] / totalRating) * 100;
+      ratingRounded = Math.round(ratingPercentage / 10) * 10 + "%";
+      star = table.querySelector(`.${rating} .inner-star`);
+      numberRating = table.querySelector(`.${rating} .numberRating`);
+      star.style.width = ratingRounded;
+      numberRating.innerText = ratings[rating];
+    }
+  }
+  rateIt();
+</script>
 
 <%- include("include/footer"); %>

@@ -1,0 +1,53 @@
+<%- include("include/header"); %>
+<div class="bgdark"></div>
+
+<main id="main">
+  <div id="contents">
+    <div class="loginContainer">
+      <h2 class="title"><%= title %></h2>
+      <form action="/signUp" method="POST" id="confirm" class="formBox">
+        <div class="inputBox">
+          <label>
+            <span class="label">ID</span>
+            <input
+              type="text"
+              id="userID"
+              name="userID"
+              placeholder="ID 입력."
+            />
+          </label>
+        </div>
+        <div class="inputBox">
+          <label>
+            <span class="label">Password</span>
+            <input
+              type="password"
+              id="userPW"
+              name="userPW"
+              placeholder="비밀번호 입력"
+            />
+          </label>
+        </div>
+        <div class="inputBox">
+          <label>
+            <span class="label">Password 확인</span>
+            <input
+              type="password"
+              id="userPWCheck"
+              name="userPWChect"
+              placeholder="비밀번호 확인"
+            />
+          </label>
+        </div>
+        <div class="btns">
+          <button id="btnJoin">가입</button>
+          <button type="reset"><a href="/">취소</a></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script></script>
+
+<%- include("include/footer"); %>

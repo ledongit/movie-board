@@ -1,0 +1,30 @@
+<%- include("include/header") %>
+
+<main id="main">
+  <div id="contents">
+    <h2 class="title"><%= title %></h2>
+    <div class="detail">
+      <ul class="detailBox">
+        <li><span class="title"><%= result.postTitle %></span></li>
+        <li>
+          <div><span>영화: </span><%= result.movieTitle %></div>
+          <div><span>작성일 </span><%= result.now %></div>
+        </li>
+        <li>
+          <div><span>평점: </span><%= result.point %></div>
+          <div><span>관람일: </span><%= result.date %></div>
+        </li>
+        <li>
+          <div><span>내용: </span><%= result.desc %></div>
+        </li>
+        <li>
+          <div>
+            <span><img class="image" src="<%= result.image %>" alt="" /></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<%- include("include/footer") %>
