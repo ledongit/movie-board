@@ -27,6 +27,7 @@
               placeholder="비밀번호 입력"
             />
           </label>
+          <p class="errorMsg"></p>
         </div>
         <div class="inputBox">
           <label>
@@ -34,7 +35,7 @@
             <input
               type="password"
               id="userPWCheck"
-              name="userPWChect"
+              name="userPWCheck"
               placeholder="비밀번호 확인"
             />
           </label>
@@ -48,6 +49,18 @@
   </div>
 </main>
 
-<script></script>
+<script>
+  $("#btnJoin").on("click", () => {
+    console.log($("#userPW").val().trim());
+    console.log($("#userPWCheck").val().trim());
+    if ($("#userPW").val().trim() !== $("#userPWCheck").val().trim()) {
+      $("#userPW").addClass("error");
+      // $("#userPW")[0].reset();
+      // $("#userPWCheck")[0].reset();
+      $("#userPW").focus();
+      return false;
+    }
+  });
+</script>
 
 <%- include("include/footer"); %>
